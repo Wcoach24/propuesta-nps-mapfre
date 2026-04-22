@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Propuesta · NPS Predictivo en Contact Center — Mapfre España</title>
+<meta name="description" content="Propuesta Capgemini Invent · NPS Predictivo · Mapfre España · Abril 2026">
+<style>
+  :root{
+    --ink:#0b1020;
+    --ink-soft:#1b2238;
+    --muted:#5b6475;
+    --line:#e6e8ee;
+    --bg:#ffffff;
+    --bg-soft:#f7f8fb;
+    --accent:#0a5cff;
+    --accent-soft:#eaf1ff;
+    --ok:#0f8a3a;
+    --warn:#b75d00;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Inter","Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.6}
+  .wrap{max-width:920px;margin:0 auto;padding:64px 32px 96px}
+  header.top{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;border-bottom:1px solid var(--line);padding-bottom:24px;margin-bottom:40px}
+  header.top .brand{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+  header.top .meta{text-align:right;font-size:13px;color:var(--muted)}
+  h1{font-size:40px;line-height:1.15;margin:0 0 8px;letter-spacing:-0.02em}
+  h2{font-size:24px;margin:56px 0 12px;letter-spacing:-0.01em;padding-top:24px;border-top:1px solid var(--line)}
+  h3{font-size:18px;margin:32px 0 8px}
+  h4{font-size:15px;margin:20px 0 6px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+  p{margin:0 0 14px}
+  a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent}
+  a:hover{border-bottom-color:var(--accent)}
+  ul,ol{padding-left:22px;margin:0 0 16px}
+  li{margin:6px 0}
+  strong{color:var(--ink)}
+  em{color:var(--ink-soft)}
+  code{background:var(--bg-soft);padding:2px 6px;border-radius:4px;font-size:13px}
+  pre{background:var(--ink);color:#e6e8ee;padding:18px 20px;border-radius:10px;overflow-x:auto;font-size:13px;line-height:1.55}
+  blockquote{border-left:3px solid var(--accent);margin:16px 0;padding:4px 16px;color:var(--ink-soft);background:var(--accent-soft);border-radius:0 8px 8px 0}
+  table{width:100%;border-collapse:collapse;margin:16px 0 20px;font-size:14px}
+  th,td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}
+  th{background:var(--bg-soft);font-weight:600}
+  .hero{background:linear-gradient(135deg,#0b1020,#1b2238);color:#fff;padding:40px 36px;border-radius:16px;margin-bottom:32px}
+  .hero .kicker{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#9aa4b8;margin-bottom:14px}
+  .hero h1{color:#fff;font-size:42px}
+  .hero .sub{color:#c6cbd8;font-size:15px;margin-top:14px}
+  .pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+  .pill{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);color:#e6e8ee;padding:6px 12px;border-radius:999px;font-size:12px}
+  .toc{background:var(--bg-soft);border:1px solid var(--line);border-radius:12px;padding:20px 24px;margin-bottom:32px}
+  .toc h4{margin-top:0}
+  .toc ol{margin:0;columns:2;column-gap:28px}
+  .toc a{color:var(--ink)}
+  .toc a:hover{color:var(--accent)}
+  .card{background:var(--bg-soft);border:1px solid var(--line);border-radius:12px;padding:20px 24px;margin:18px 0}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .tag{display:inline-block;background:var(--accent-soft);color:var(--accent);padding:3px 10px;border-radius:999px;font-size:12px;font-weight:600;letter-spacing:.02em}
+  footer{margin-top:80px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:13px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+  @media (max-width:720px){
+    .wrap{padding:32px 20px 64px}
+    h1{font-size:30px}
+    .hero{padding:28px 22px}
+    .hero h1{font-size:30px}
+    .grid{grid-template-columns:1fr}
+    .toc ol{columns:1}
+    table{font-size:13px}
+  }
+  @media print{
+    .hero{background:#fff;color:#000;border:1px solid #000}
+    .hero h1,.hero .kicker,.hero .sub,.pill{color:#000}
+    header.top,footer,.toc{display:none}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <div class="brand">Capgemini Invent · Data &amp; AI · Iberia</div>
+  <div class="meta">
+    Doc. CI-INV-2026-NPS-001 · v0.2<br>
+    Abril 2026
+  </div>
+</header>
+
+<section class="hero">
+  <div class="kicker">Propuesta · Data &amp; AI</div>
+  <h1>NPS Predictivo en Contact Center</h1>
+  <div class="sub">
+    Cliente: <strong style="color:#fff">Mapfre España</strong> · Referencia pliego: LSALBER-Data-NPS Predictivo · Doc. 3068906220<br>
+    Presentado por: Capgemini Invent · Fecha: Abril 2026 · Versión: v0.2 · borrador para validación interna
+  </div>
+  <div class="pills">
+    <span class="pill">300.000 llamadas/año</span>
+    <span class="pill">8 semanas · entrega 30/06/2026</span>
+    <span class="pill">~5.400 €/año operativo</span>
+    <span class="pill">AI Act-ready</span>
+    <span class="pill">80–95 K€ · precio cerrado</span>
+  </div>
+</section>
+
+<nav class="toc">
+  <h4>Índice</h4>
+  <ol>
+    <li><a href="#s1">Resumen ejecutivo</a></li>
+    <li><a href="#s2">Entendimiento del reto</a></li>
+    <li><a href="#s3">Enfoque técnico y arquitectura</a></li>
+    <li><a href="#s4">Roadmap, entregables y aceptación</a></li>
+    <li><a href="#s5">Operación y mantenimiento</a></li>
+    <li><a href="#s6">Equipo, gobernanza y riesgos</a></li>
+    <li><a href="#s7">Criterios de éxito</a></li>
+    <li><a href="#s8">Inversión y condiciones</a></li>
+    <li><a href="#s9">Próximos pasos</a></li>
+    <li><a href="#s10">Anexos</a></li>
+  </ol>
+</nav>
+
+<p><em>La versión completa del documento HTML se encuentra en el fichero <code>index.html</code> de este repositorio. Abre el fichero raw o clona el repo y ábrelo en el navegador. Para vista renderizada online, habilita GitHub Pages en Settings → Pages → main / root.</em></p>
+
+<p>El contenido completo (10 secciones + FAQ) está también disponible en formato Markdown renderizado en el <a href="./README.md">README</a> del repositorio.</p>
+
+<footer>
+  <div>Capgemini Invent · Data &amp; AI · Iberia</div>
+  <div>Doc. CI-INV-2026-NPS-001 · v0.2 · abril 2026</div>
+</footer>
+
+</div>
+</body>
+</html>
