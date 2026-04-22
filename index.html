@@ -1,426 +1,70 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Propuesta · NPS Predictivo en Contact Center — Mapfre España</title>
-<meta name="description" content="Propuesta Capgemini Invent · NPS Predictivo · Mapfre España · Abril 2026">
+<html lang="es"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Propuesta · NPS Predictivo</title>
 <style>
-  :root{
-    --ink:#0b1020;
-    --ink-soft:#1b2238;
-    --muted:#5b6475;
-    --line:#e6e8ee;
-    --bg:#ffffff;
-    --bg-soft:#f7f8fb;
-    --accent:#0a5cff;
-    --accent-soft:#eaf1ff;
-    --ok:#0f8a3a;
-    --warn:#b75d00;
-  }
-  *{box-sizing:border-box}
-  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Inter","Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.6}
-  .wrap{max-width:920px;margin:0 auto;padding:64px 32px 96px}
-  header.top{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;border-bottom:1px solid var(--line);padding-bottom:24px;margin-bottom:40px}
-  header.top .brand{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
-  header.top .meta{text-align:right;font-size:13px;color:var(--muted)}
-  h1{font-size:40px;line-height:1.15;margin:0 0 8px;letter-spacing:-0.02em}
-  h2{font-size:24px;margin:56px 0 12px;letter-spacing:-0.01em;padding-top:24px;border-top:1px solid var(--line)}
-  h3{font-size:18px;margin:32px 0 8px}
-  h4{font-size:15px;margin:20px 0 6px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
-  p{margin:0 0 14px}
-  a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent}
-  a:hover{border-bottom-color:var(--accent)}
-  ul,ol{padding-left:22px;margin:0 0 16px}
-  li{margin:6px 0}
-  strong{color:var(--ink)}
-  em{color:var(--ink-soft)}
-  code{background:var(--bg-soft);padding:2px 6px;border-radius:4px;font-size:13px}
-  pre{background:var(--ink);color:#e6e8ee;padding:18px 20px;border-radius:10px;overflow-x:auto;font-size:13px;line-height:1.55}
-  blockquote{border-left:3px solid var(--accent);margin:16px 0;padding:4px 16px;color:var(--ink-soft);background:var(--accent-soft);border-radius:0 8px 8px 0}
-  table{width:100%;border-collapse:collapse;margin:16px 0 20px;font-size:14px}
-  th,td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}
-  th{background:var(--bg-soft);font-weight:600}
-  .hero{background:linear-gradient(135deg,#0b1020,#1b2238);color:#fff;padding:40px 36px;border-radius:16px;margin-bottom:32px}
-  .hero .kicker{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#9aa4b8;margin-bottom:14px}
-  .hero h1{color:#fff;font-size:42px}
-  .hero .sub{color:#c6cbd8;font-size:15px;margin-top:14px}
-  .pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
-  .pill{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);color:#e6e8ee;padding:6px 12px;border-radius:999px;font-size:12px}
-  .toc{background:var(--bg-soft);border:1px solid var(--line);border-radius:12px;padding:20px 24px;margin-bottom:32px}
-  .toc h4{margin-top:0}
-  .toc ol{margin:0;columns:2;column-gap:28px}
-  .toc a{color:var(--ink)}
-  .toc a:hover{color:var(--accent)}
-  .tag{display:inline-block;background:var(--accent-soft);color:var(--accent);padding:3px 10px;border-radius:999px;font-size:12px;font-weight:600;letter-spacing:.02em}
-  footer{margin-top:80px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:13px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
-  @media (max-width:720px){
-    .wrap{padding:32px 20px 64px}
-    h1{font-size:30px}
-    .hero{padding:28px 22px}
-    .hero h1{font-size:30px}
-    .toc ol{columns:1}
-    table{font-size:13px}
-  }
-  @media print{
-    .hero{background:#fff;color:#000;border:1px solid #000}
-    .hero h1,.hero .kicker,.hero .sub,.pill{color:#000}
-    header.top,footer,.toc{display:none}
-  }
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,"Inter","Segoe UI",sans-serif;background:#0b1020;color:#fff;-webkit-font-smoothing:antialiased}
+.gate{min-height:100%;display:flex;align-items:center;justify-content:center;padding:24px}
+.card{max-width:420px;width:100%;background:#141a2e;border:1px solid #1f2742;border-radius:16px;padding:40px 32px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.4)}
+.brand{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#7a85a3;margin-bottom:24px}
+h1{font-size:22px;line-height:1.3;margin-bottom:8px;letter-spacing:-0.01em}
+p{font-size:14px;color:#9aa3bd;margin-bottom:28px;line-height:1.55}
+input{width:100%;padding:14px 16px;background:#0b1020;border:1px solid #2a3356;border-radius:10px;color:#fff;font-size:15px;font-family:inherit;outline:none;transition:border .15s}
+input:focus{border-color:#4a7cff}
+button{width:100%;margin-top:12px;padding:14px;background:#4a7cff;border:0;border-radius:10px;color:#fff;font-size:15px;font-weight:600;cursor:pointer;font-family:inherit;transition:background .15s}
+button:hover{background:#3a6cef}
+button:disabled{opacity:.5;cursor:wait}
+.err{color:#ff7b7b;font-size:13px;margin-top:12px;min-height:18px}
+.foot{font-size:11px;color:#5a6480;margin-top:24px;letter-spacing:.04em}
+#content{display:none}
 </style>
-</head>
-<body>
-<div class="wrap">
-
-<header class="top">
-  <div class="brand">Capgemini Invent · Data &amp; AI · Iberia</div>
-  <div class="meta">Doc. CI-INV-2026-NPS-001 · v0.2<br>Abril 2026</div>
-</header>
-
-<section class="hero">
-  <div class="kicker">Propuesta · Data &amp; AI</div>
-  <h1>NPS Predictivo en Contact Center</h1>
-  <div class="sub">
-    Cliente: <strong style="color:#fff">Mapfre España</strong> · Referencia pliego: LSALBER-Data-NPS Predictivo · Doc. 3068906220<br>
-    Presentado por: Capgemini Invent · Fecha: Abril 2026 · Versión: v0.2 · borrador para validación interna
-  </div>
-  <div class="pills">
-    <span class="pill">300.000 llamadas/año</span>
-    <span class="pill">8 semanas · entrega 30/06/2026</span>
-    <span class="pill">~5.400 €/año operativo</span>
-    <span class="pill">AI Act-ready</span>
-    <span class="pill">80–95 K€ · precio cerrado</span>
-  </div>
-</section>
-
-<nav class="toc">
-  <h4>Índice</h4>
-  <ol>
-    <li><a href="#s1">Resumen ejecutivo</a></li>
-    <li><a href="#s2">Entendimiento del reto</a></li>
-    <li><a href="#s3">Enfoque técnico y arquitectura</a></li>
-    <li><a href="#s4">Roadmap, entregables y aceptación</a></li>
-    <li><a href="#s5">Operación y mantenimiento</a></li>
-    <li><a href="#s6">Equipo, gobernanza y riesgos</a></li>
-    <li><a href="#s7">Criterios de éxito</a></li>
-    <li><a href="#s8">Inversión y condiciones</a></li>
-    <li><a href="#s9">Próximos pasos</a></li>
-    <li><a href="#s10">Anexos</a></li>
-  </ol>
-</nav>
-
-<h2 id="s1">01 · Resumen ejecutivo</h2>
-<p>Capgemini Invent propone diseñar, construir y transferir a Mapfre España un agente de IA que infiere el NPS transaccional de cada llamada del Contact Center de Prestaciones Hogar, a partir de su transcripción y de los metadatos operativos asociados, en un plazo de <strong>8 semanas con entrega final el 30 de junio de 2026</strong>.</p>
-<p>El sistema de medición de NPS actual de Mapfre cubre el <strong>5–8% de las llamadas</strong> vía encuesta voluntaria. Eso significa que el 92% de los clientes —y casi todos los detractores silenciosos— quedan invisibles. La propuesta no es mejorar la encuesta. Es construir el sistema que permite saber qué siente el otro 92% de clientes con datos que Mapfre ya tiene.</p>
-
-<h3>Propuesta de valor en cuatro puntos</h3>
-<ul>
-  <li><strong>Arquitectura híbrida, no caja negra.</strong> El LLM extrae señales semánticas estructuradas; un modelo supervisado clásico (XGBoost) las combina con metadatos operativos para predecir el NPS. Cada predicción es trazable y explicable matemáticamente con SHAP. Diseñado para auditoría EU AI Act desde el primer día.</li>
-  <li><strong>Coste de operación controlado.</strong> El LLM se ejecuta solo en la fase de extracción de señales, en batch nocturno. Coste estimado: <strong>~5.400 €/año</strong> en tokens para las 300K llamadas de Prestaciones Hogar.</li>
-  <li><strong>Land-and-expand desde el diseño.</strong> El mismo pipeline escala a Auto, Multirriesgo y resto del Contact Center con coste lineal predecible.</li>
-  <li><strong>Mapfre opera en autonomía a la entrega.</strong> Repositorio de código, model card, runbook, dataset etiquetado y dos sesiones de transferencia grabadas.</li>
-</ul>
-
-<h3>Cifras clave</h3>
-<table>
-<tr><th>Concepto</th><th>Valor</th></tr>
-<tr><td>Volumen a procesar</td><td>300.000 llamadas/año · Prestaciones Hogar</td></tr>
-<tr><td>Plazo</td><td>8 semanas desde adjudicación · entrega 30/06/2026</td></tr>
-<tr><td>Fases</td><td>3 fases solapadas con 2 hitos gating</td></tr>
-<tr><td>Coste operativo post-entrega</td><td>~5.400 €/año en tokens LLM (escala lineal)</td></tr>
-<tr><td>Inversión</td><td>80–95 K€ · precio cerrado · pago por hitos · <em>[a confirmar]</em></td></tr>
-<tr><td>Compliance</td><td>AI Act-ready · vigencia plena 02/08/2026</td></tr>
-</table>
-
-<h2 id="s2">02 · Entendimiento del reto</h2>
-<h3>El reto operativo</h3>
-<p>Mapfre España opera un Contact Center (C@C24) que gestiona ~<strong>1,37 millones de llamadas/mes</strong>, con NICE como sistema de grabación. La NPS transaccional actual tiene cuatro limitaciones:</p>
-<ul>
-  <li><strong>Cobertura limitada.</strong> Solo 5–8% responde. El 92–95% restante es invisible.</li>
-  <li><strong>Sesgo del detractor silencioso.</strong> Los más insatisfechos son los que menos responden.</li>
-  <li><strong>Latencia operativa.</strong> Llega cuando la ventana de recovery se ha cerrado.</li>
-  <li><strong>Granularidad agregada.</strong> No identifica palancas operativas concretas.</li>
-</ul>
-<blockquote>El sistema actual funciona para reportar. No funciona para accionar.</blockquote>
-
-<h3>Lo que el pliego pide</h3>
-<ol>
-  <li>Un agente IA que devuelva NPS estimado + clasificación + explicación.</li>
-  <li>Una metodología reproducible que Mapfre aplique en autonomía.</li>
-  <li>Una taxonomía de pain points accionable por Calidad y Operaciones.</li>
-</ol>
-
-<h3>Por qué Capgemini Invent</h3>
-<ul>
-  <li><strong>Arquitectura híbrida probada</strong> en banca y seguros europeos.</li>
-  <li><strong>Precedente directo Mapfre.</strong> AWS Bedrock + Claude aprobado por DPO en MIA GPT. <em>[Confirmar con Alberto/Javier]</em></li>
-  <li><strong>Equipo senior compacto</strong> con un único punto focal técnico.</li>
-  <li><strong>Transferencia real:</strong> Mapfre opera el día 1 sin nosotros.</li>
-  <li><strong>AI Act-ready desde S1</strong> con plantillas Capgemini validadas.</li>
-</ul>
-
-<h2 id="s3">03 · Enfoque técnico y arquitectura</h2>
-<h3>Separar percepción de decisión</h3>
-<p>El LLM hace lo que sabe — leer conversación humana y describirla en variables estructuradas con quotes literales. Un modelo supervisado clásico combina esas variables con metadatos para predecir NPS de forma determinista, auditable y reentrenable.</p>
-
-<h3>Por qué híbrido y no LLM directo</h3>
-<table>
-<tr><th>Dimensión</th><th>LLM directo</th><th>Híbrida (propuesta)</th><th>Impacto</th></tr>
-<tr><td>Coste anual</td><td>~13.500 €</td><td>~5.400 €</td><td>~8.000 € ahorro</td></tr>
-<tr><td>Determinismo</td><td>Variable</td><td>100%</td><td>Auditable</td></tr>
-<tr><td>Aprendizaje específico</td><td>No aprende</td><td>XGBoost aprende</td><td>Mayor precisión</td></tr>
-<tr><td>Explicabilidad</td><td>Texto generado</td><td>SHAP matemático</td><td>Defendible AI Act</td></tr>
-<tr><td>Cambio proveedor</td><td>Lock-in</td><td>Desacoplado</td><td>Optionality</td></tr>
-</table>
-
-<h3>Arquitectura en cuatro capas</h3>
-<table>
-<tr><th>Capa</th><th>Responsabilidad</th><th>Componente</th></tr>
-<tr><td>01 · Ingesta</td><td>Normalización + anonimización PII + QC</td><td>Presidio + AWS Comprehend</td></tr>
-<tr><td>02 · Extracción LLM</td><td>JSON con 12 señales + quotes literales</td><td>Claude Sonnet 4.6 · Bedrock (EU Frankfurt)</td></tr>
-<tr><td>03 · Modelo predictivo</td><td>NPS + clase + SHAP</td><td>XGBoost + SHAP + scikit-learn + MLflow</td></tr>
-<tr><td>04 · Insights</td><td>Taxonomía + dashboard</td><td>Power BI sobre S3 vía Athena</td></tr>
-</table>
-
-<h3>Las 12 señales semánticas</h3>
-<table>
-<tr><th>#</th><th>Señal</th><th>Tipo</th><th>Rango</th></tr>
-<tr><td>01</td><td>Sentimiento global del cliente</td><td>float</td><td>[-1, +1]</td></tr>
-<tr><td>02</td><td>Esfuerzo percibido (CES implícito)</td><td>float</td><td>[0, 1]</td></tr>
-<tr><td>03</td><td>Empatía mostrada por el agente</td><td>float</td><td>[0, 1]</td></tr>
-<tr><td>04</td><td>Repetición del mismo problema</td><td>int</td><td>[0, n]</td></tr>
-<tr><td>05</td><td>Fricción operativa percibida</td><td>float</td><td>[0, 1]</td></tr>
-<tr><td>06</td><td>Resolución en primera llamada (FCR)</td><td>bool</td><td>true/false</td></tr>
-<tr><td>07</td><td>Claridad de la respuesta del agente</td><td>float</td><td>[0, 1]</td></tr>
-<tr><td>08</td><td>Tono cliente al cierre</td><td>enum</td><td>calmado / frustrado / indignado / satisfecho</td></tr>
-<tr><td>09</td><td>Mención de competencia</td><td>bool</td><td>true/false</td></tr>
-<tr><td>10</td><td>Intención implícita de cancelación</td><td>float</td><td>[0, 1]</td></tr>
-<tr><td>11</td><td>Categoría de pain point dominante</td><td>enum</td><td>≥ 8 categorías</td></tr>
-<tr><td>12</td><td>Severidad del pain point dominante</td><td>enum</td><td>bajo / medio / alto / crítico</td></tr>
-</table>
-
-<h3>Ejemplo SHAP</h3>
-<pre>Llamada #47821 → Predicción NPS = 3 (Detractor, prob 0.87)
-
-Base value (NPS medio histórico):    7.2
-+ Esfuerzo percibido alto:          -1.8
-+ 3 transferencias entre agentes:   -1.2
-+ Repetición del problema (2x):     -0.9
-- Empatía del agente alta:          +0.4
-- Resolución en primera llamada:    +0.3
-─────────────────────────────────────
-Predicción final:                    4.0 → Clase: Detractor</pre>
-
-<h3>Stack tecnológico</h3>
-<p><strong>Stack A · AWS Bedrock (principal):</strong> Claude Sonnet 4.6 · SageMaker · S3 cifrado KMS · Presidio + Comprehend · XGBoost + SHAP · MLflow · Evidently + CloudWatch · Power BI sobre Athena · Model card Google + DPA AWS + CloudTrail. Aprovecha el precedente MIA GPT ya validado por DPO.</p>
-<p><strong>Stack B · Azure OpenAI (alternativa):</strong> GPT-5.4 en Microsoft Foundry + Azure ML + ADLS + Power BI sobre Synapse. Migración entre stacks: ~1 semana. Decisión en Hito 01.</p>
-
-<h2 id="s4">04 · Roadmap, entregables y aceptación</h2>
-<h3>Calendario (adjudicación primera semana mayo 2026)</h3>
-<table>
-<tr><th>Sem.</th><th>Fechas</th><th>Fase</th><th>Actividad</th><th>Hito</th></tr>
-<tr><td>S1</td><td>05–11 may</td><td>I</td><td>Kick-off · accesos · muestra 100 llamadas</td><td>Kick-off</td></tr>
-<tr><td>S2</td><td>12–18 may</td><td>I</td><td>Entendimiento datos · anotación ground truth</td><td></td></tr>
-<tr><td>S3</td><td>19–25 may</td><td>I→II</td><td>Cierre diseño · variables · prompt v1</td><td><span class="tag">H1 · Diseño aprobado</span></td></tr>
-<tr><td>S4</td><td>26 may–01 jun</td><td>II</td><td>Pipeline · prompt engineering · anotación</td><td></td></tr>
-<tr><td>S5</td><td>02–08 jun</td><td>II</td><td>Modelo XGBoost · MVP end-to-end</td><td></td></tr>
-<tr><td>S6</td><td>09–15 jun</td><td>II→III</td><td>Validación · calibración Platt</td><td><span class="tag">H2 · Modelo validado</span></td></tr>
-<tr><td>S7</td><td>16–22 jun</td><td>III</td><td>Taxonomía · insights · dashboard v1</td><td></td></tr>
-<tr><td>S8</td><td>23–30 jun</td><td>III</td><td>Cierre · model card · runbook · transferencia</td><td><span class="tag">H3 · Aceptación</span></td></tr>
-</table>
-
-<h3>Transferencia · seis entregables</h3>
-<ol>
-  <li>Repositorio de código (pipeline, tests, Terraform)</li>
-  <li>Model card (estándar Google)</li>
-  <li>Runbook operativo (reentrenamiento, drift, prompts)</li>
-  <li>Dataset etiquetado (1.500–2.000 llamadas ground truth)</li>
-  <li>Sesiones de transferencia grabadas (técnica 4h + negocio 2h)</li>
-  <li>Plan de evolución a Auto, Multirriesgo, resto CC</li>
-</ol>
-
-<h2 id="s5">05 · Operación y mantenimiento</h2>
-<h3>Funcionamiento</h3>
-<p>Pipeline <strong>batch nocturno</strong>, no tiempo real. Resultados disponibles a primera hora del día siguiente. Ingesta → Anonimización → Extracción LLM → Predicción → Persistencia → Visualización.</p>
-
-<h3>Coste operativo</h3>
-<table>
-<tr><th>Cobertura</th><th>Volumen/año</th><th>Coste LLM/año</th></tr>
-<tr><td>Prestaciones Hogar (piloto)</td><td>~300.000</td><td>~5.400 €</td></tr>
-<tr><td>Hogar + Auto + Multirriesgo</td><td>~900.000</td><td>~16.000 €</td></tr>
-<tr><td>Contact Center completo</td><td>~16 M</td><td>~290.000 €</td></tr>
-</table>
-
-<h3>Palancas de control</h3>
-<ul>
-  <li>Batch por defecto (descuento 50%)</li>
-  <li>Filtrado pre-LLM de llamadas &lt; 60s (~15% adicional)</li>
-  <li>Muestreo configurable 50–75%</li>
-</ul>
-
-<h3>Independencia tecnológica</h3>
-<p>Abstracción del proveedor. Cambio a GPT-5 / Llama 4 / Mistral: ~1 semana de un Data Scientist Mapfre.</p>
-
-<h3>Mantenimiento en autonomía</h3>
-<table>
-<tr><th>Actividad</th><th>Frecuencia</th><th>Esfuerzo</th><th>Responsable</th></tr>
-<tr><td>Monitorización dashboard</td><td>Diaria</td><td>Automática</td><td>Calidad / Ops</td></tr>
-<tr><td>Métricas de drift</td><td>Mensual</td><td>~2 h</td><td>Data Scientist</td></tr>
-<tr><td>Reentrenamiento XGBoost</td><td>3–6 meses</td><td>~1 día</td><td>Data Scientist</td></tr>
-<tr><td>Actualización prompt</td><td>Según necesidad</td><td>~1 día</td><td>Data Scientist</td></tr>
-<tr><td>Auditoría AI Act</td><td>Anual</td><td>~3 días</td><td>Data &amp; IA + Compliance</td></tr>
-</table>
-
-<h3>Fuera de alcance</h3>
-<ul>
-  <li>UI propia distinta al dashboard Power BI</li>
-  <li>Integración tiempo real en CC</li>
-  <li>Alertas automáticas durante llamada</li>
-  <li>API expuesta a otras aplicaciones</li>
-  <li>Servicios distintos de Prestaciones Hogar</li>
-</ul>
-
-<h2 id="s6">06 · Equipo, gobernanza y riesgos</h2>
-<h3>Equipo (~67 días)</h3>
-<table>
-<tr><th>Rol</th><th>Perfil</th><th>Dedicación</th><th>Esfuerzo</th></tr>
-<tr><td>Responsable técnico · punto focal</td><td>Senior Consultant</td><td>100% · 8 sem</td><td>40 días</td></tr>
-<tr><td>Apoyo modelado</td><td>Data Scientist</td><td>25–35% · S4–S6</td><td>12 días</td></tr>
-<tr><td>Anotación ground truth</td><td>Annotator</td><td>100% · S2–S4</td><td>10 días</td></tr>
-<tr><td>QA, governance, sponsor</td><td>Manager / Sr. Manager</td><td>10% · 8 sem</td><td>5 días</td></tr>
-</table>
-
-<h3>Riesgos principales</h3>
-<table>
-<tr><th>#</th><th>Riesgo</th><th>Prob.</th><th>Impacto</th><th>Mitigación</th></tr>
-<tr><td>R1</td><td>NPS real vinculado inexistente</td><td>Alta</td><td>Media</td><td>Plan A (encuesta) / Plan B (anotación, Kappa ≥ 0,70)</td></tr>
-<tr><td>R2</td><td>Calendario 8 semanas</td><td>Alta</td><td>Alta</td><td>Fases solapadas · ground truth S2 · contingencia 15%</td></tr>
-<tr><td>R3</td><td>LOPDGDD · PII</td><td>Alta</td><td>Media</td><td>Anonimización previa · EU Frankfurt · DPA AWS · DPO S1</td></tr>
-<tr><td>R4</td><td>Sin criterios cuantitativos</td><td>Media</td><td>Alta</td><td>Umbrales en §07 · firmados en H1</td></tr>
-<tr><td>R5</td><td>EU AI Act 02/08/2026</td><td>Media</td><td>Alta</td><td>Documentación alto riesgo desde S1 · plantillas Capgemini</td></tr>
-<tr><td>R6</td><td>Calidad transcripciones NICE</td><td>Media</td><td>Media</td><td>QC en ingesta · descarte WER alto</td></tr>
-<tr><td>R7</td><td>Desalineación con Ops</td><td>Media</td><td>Media</td><td>Weekly con Ops desde S5 · validación taxonomía</td></tr>
-<tr><td>R8</td><td>Sesgos por segmento</td><td>Media</td><td>Media</td><td>Análisis fairness H2 · ajuste si disparidades</td></tr>
-</table>
-
-<h3>Plan de contingencia</h3>
-<ul>
-  <li><strong>(a)</strong> Todos los umbrales superados → aceptación 10 días.</li>
-  <li><strong>(b)</strong> Mayoría al 85–95% → aceptación con reserva + plan mejora 4 sem sin coste.</li>
-  <li><strong>(c)</strong> Significativamente por debajo → causas raíz + medidas correctoras.</li>
-</ul>
-
-<h2 id="s7">07 · Criterios de éxito</h2>
-<table>
-<tr><th>Métrica</th><th>Umbral</th><th>Por qué</th></tr>
-<tr><td>F1-score · Detractor</td><td>≥ 0,75</td><td>Operativamente más relevante. Realista con transcripciones reales</td></tr>
-<tr><td>MAE · NPS predicho vs real</td><td>≤ 1,5</td><td>Ranking por NPS útil para priorización</td></tr>
-<tr><td>Kappa de Cohen · ground truth</td><td>≥ 0,70</td><td>Validez del entrenamiento</td></tr>
-<tr><td>Trazabilidad por predicción</td><td>100%</td><td>SHAP + quotes · exigible AI Act</td></tr>
-<tr><td>Pain points en taxonomía</td><td>≥ 8</td><td>Granularidad mínima accionable</td></tr>
-<tr><td>Sesiones transferencia</td><td>2</td><td>Técnica (4h) + negocio (2h) grabadas</td></tr>
-</table>
-
-<h3>Aceptación formal</h3>
-<ol>
-  <li>Modelo supera umbrales acordados en H1</li>
-  <li>Taxonomía validada por Comité</li>
-  <li>Seis entregables en infraestructura Mapfre</li>
-  <li>Dos sesiones impartidas</li>
-  <li>Aceptación escrita en 10 días laborables (o tácita)</li>
-</ol>
-
-<h2 id="s8">08 · Inversión y condiciones</h2>
-<p><strong>Precio cerrado por entregables.</strong> Rango <strong>80–95 K€</strong> · IVA no incluido · <em>[a confirmar tras escandallo oficial Capgemini]</em></p>
-
-<h3>Desglose orientativo</h3>
-<table>
-<tr><th>Concepto</th><th>Perfil</th><th>Días</th></tr>
-<tr><td>Responsable técnico</td><td>Senior Consultant</td><td>40</td></tr>
-<tr><td>Apoyo modelado</td><td>Data Scientist</td><td>12</td></tr>
-<tr><td>Anotación</td><td>Annotator</td><td>10</td></tr>
-<tr><td>QA, governance</td><td>Manager / Sr. Manager</td><td>5</td></tr>
-<tr><td>Infra, licencias, tokens</td><td>—</td><td>~3.500 €</td></tr>
-<tr><td><strong>Total</strong></td><td></td><td><strong>~67 días · 80–95 K€</strong></td></tr>
-</table>
-
-<h3>Formatos alternativos</h3>
-<table>
-<tr><th>Formato</th><th>Rango</th><th>Incluye</th></tr>
-<tr><td>Básico</td><td>~-20%</td><td>Fases I-II · Fase III simplificada</td></tr>
-<tr><td><strong>Estándar</strong> (recomendado)</td><td>80–95 K€</td><td>Alcance completo</td></tr>
-<tr><td>Ampliado</td><td>~+30%</td><td>+ hyper-care 4 sem + 2 servicios piloto</td></tr>
-</table>
-
-<h3>Plan de pagos</h3>
-<table>
-<tr><th>Hito</th><th>%</th><th>Momento</th><th>Condición</th></tr>
-<tr><td>Kick-off</td><td>30%</td><td>S1</td><td>Firma contrato</td></tr>
-<tr><td>Cierre Fase II</td><td>40%</td><td>S6</td><td>Aprobación H2</td></tr>
-<tr><td>Aceptación final</td><td>30%</td><td>S8 + 10 días</td><td>Aceptación escrita o tácita</td></tr>
-</table>
-
-<h3>Condiciones</h3>
-<ul>
-  <li><strong>Validez:</strong> 60 días · <strong>Facturación:</strong> Ariba · <strong>Change order:</strong> respuesta 48h</li>
-  <li><strong>IP:</strong> modelo, dataset, código, documentación son propiedad Mapfre tras pago final. Metodología/frameworks genéricos son Capgemini con licencia perpetua, no exclusiva y libre de royalties.</li>
-  <li><strong>Confidencialidad:</strong> Anexo A (NDA) · <strong>Responsabilidad:</strong> limitada al importe del contrato</li>
-</ul>
-
-<h3>No incluye</h3>
-<ul>
-  <li>Procesamiento masivo producción (~5.400 €/año AWS)</li>
-  <li>Integración tiempo real en CC</li>
-  <li>Servicios distintos de Prestaciones Hogar</li>
-  <li>Tokens LLM &gt; 500 € durante desarrollo</li>
-</ul>
-
-<h2 id="s9">09 · Próximos pasos</h2>
-<table>
-<tr><th>Paso</th><th>Plazo</th><th>Acción</th></tr>
-<tr><td>01 · Anexo C dudas</td><td>Esta semana</td><td>Sesión 60 min con Data &amp; IA</td></tr>
-<tr><td>02 · Adjudicación</td><td>Próximos 10 días</td><td>NDA · accesos · interlocutor único</td></tr>
-<tr><td>03 · Kick-off</td><td>Semana 5 mayo</td><td>Presencial Madrid · firma H1 antes fin S3</td></tr>
-</table>
-
-<h3>Las 5 preguntas críticas</h3>
-<ol>
-  <li>¿Existe NPS real vinculado a un subset de las 300K llamadas?</li>
-  <li>¿Plataforma LLM aprobada: AWS Bedrock, Azure OpenAI o ambas?</li>
-  <li>¿NICE C@C24 transcribe el 100% o un subset?</li>
-  <li>¿Criterios cuantitativos predefinidos o se fijan en H1?</li>
-  <li>¿Fecha estimada de adjudicación?</li>
-</ol>
-
-<h2 id="s10">10 · Anexos</h2>
-<ul>
-  <li><strong>Anexo A</strong> · NDA firmado según plantilla Mapfre</li>
-  <li><strong>Anexo B</strong> · Propuesta económica detallada (separado, confidencial)</li>
-  <li><strong>Anexo C</strong> · Plantilla de dudas</li>
-  <li><strong>Anexo D</strong> · CV Senior Consultant</li>
-  <li><strong>Anexo E</strong> · Credenciales Capgemini Invent sector asegurador</li>
-  <li><strong>Anexo F</strong> · FAQ anticipadas (abajo)</li>
-</ul>
-
-<h3>Anexo F · FAQ anticipadas</h3>
-<h4>1 · ¿Por qué no pedir al LLM el NPS directamente?</h4>
-<p>Técnicamente posible pero compromete cinco aspectos críticos: coste ×2,5 (13.500 € vs 5.400 €/año), no determinismo, no aprendizaje específico, explicabilidad no matemática, lock-in.</p>
-<h4>2 · ¿Cuánto costará operar anualmente?</h4>
-<p>~5.400 €/año Prestaciones Hogar · ~16.000 € Hogar+Auto+Multirriesgo · ~290.000 € CC completo.</p>
-<h4>3 · ¿Qué tratamiento reciben los datos personales?</h4>
-<p>Anonimización total antes del LLM (Presidio + Comprehend en infra Mapfre). PII nunca sale del tenant. EU Frankfurt bajo DPA AWS.</p>
-<h4>4 · ¿Podemos cambiar de proveedor LLM?</h4>
-<p>Sí. Migración GPT-5 / Llama 4 / Mistral: ~1 semana de un Data Scientist.</p>
-<h4>5 · ¿Análisis en tiempo real?</h4>
-<p>No. Batch nocturno, resultados primera hora del día siguiente.</p>
-<h4>6 · ¿Y si el modelo no alcanza los umbrales?</h4>
-<p>Plan de contingencia con 3 escenarios (§06 y §07).</p>
-
-<footer>
-  <div>Capgemini Invent · Data &amp; AI · Iberia</div>
-  <div>Doc. CI-INV-2026-NPS-001 · v0.2 · abril 2026</div>
-</footer>
-
+</head><body>
+<div class="gate" id="gate">
+  <form class="card" onsubmit="return unlock(event)">
+    <div class="brand">Capgemini Invent · Mapfre</div>
+    <h1>Documento protegido</h1>
+    <p>Introduce la contraseña para ver la propuesta.</p>
+    <input id="pw" type="password" autocomplete="off" autofocus placeholder="Contraseña">
+    <button id="btn" type="submit">Desbloquear</button>
+    <div class="err" id="err"></div>
+    <div class="foot">Borrador interno · No redistribuir</div>
+  </form>
 </div>
-</body>
-</html>
+<div id="content"></div>
+<script>
+const P = {"s": "XV88deh1GnzZZvG3lqHnZw==", "i": "0A4TbNGUIq716Xuv", "c": "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", "n": 250000};
+const b64d = s => Uint8Array.from(atob(s), c => c.charCodeAt(0));
+async function derive(pw, salt, iter) {
+  const enc = new TextEncoder();
+  const km = await crypto.subtle.importKey("raw", enc.encode(pw), "PBKDF2", false, ["deriveKey"]);
+  return crypto.subtle.deriveKey(
+    {name:"PBKDF2", salt, iterations:iter, hash:"SHA-256"},
+    km, {name:"AES-GCM", length:256}, false, ["decrypt"]
+  );
+}
+async function unlock(e) {
+  e.preventDefault();
+  const pw = document.getElementById("pw").value;
+  const btn = document.getElementById("btn");
+  const err = document.getElementById("err");
+  err.textContent = "";
+  btn.disabled = true; btn.textContent = "Descifrando...";
+  try {
+    const salt = b64d(P.s), iv = b64d(P.i), ct = b64d(P.c);
+    const key = await derive(pw, salt, P.n);
+    const pt = await crypto.subtle.decrypt({name:"AES-GCM", iv}, key, ct);
+    const ds = new DecompressionStream("gzip");
+    const stream = new Blob([pt]).stream().pipeThrough(ds);
+    const html = await new Response(stream).text();
+    document.getElementById("gate").style.display = "none";
+    document.open(); document.write(html); document.close();
+  } catch (ex) {
+    err.textContent = "Contraseña incorrecta.";
+    btn.disabled = false; btn.textContent = "Desbloquear";
+    document.getElementById("pw").select();
+  }
+  return false;
+}
+</script>
+</body></html>
